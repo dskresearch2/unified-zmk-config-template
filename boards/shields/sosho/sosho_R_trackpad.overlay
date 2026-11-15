@@ -4,7 +4,7 @@
 【スクロールモード】
 keymap の scroll レイヤー(4番)がオンの間(L+; または A+S のコンボを押している間)だけ、
 各リスナー内の scroller の input-processors が使われ、ポインタ移動の代わりにスクロールになります。
-・&zip_xy_scaler 1 4 / 1 8 … スクロール速度。速すぎるなら分母を大きく、遅すぎるなら小さく。
+・&zip_xy_scaler 1 8 / 1 16 … スクロール速度。速すぎるなら分母を大きく、遅すぎるなら小さく。
 */
 #define SCROLL_LAYER 4
 
@@ -43,7 +43,7 @@ https://zmk.dev/docs/keymaps/input-processors
 
 	scroller {
 		layers = <SCROLL_LAYER>;
-		input-processors = <&zip_xy_scaler 1 4>, <&zip_xy_to_scroll_mapper>;
+		input-processors = <&zip_xy_scaler 1 8>, <&zip_xy_to_scroll_mapper>;
 	};
 };
 
@@ -53,7 +53,7 @@ https://zmk.dev/docs/keymaps/input-processors
 
 	scroller {
 		layers = <SCROLL_LAYER>;
-		input-processors = <&zip_xy_scaler 1 4>, <&zip_xy_to_scroll_mapper>;
+		input-processors = <&zip_xy_scaler 1 8>, <&zip_xy_to_scroll_mapper>;
 	};
 };
 
@@ -64,6 +64,6 @@ https://zmk.dev/docs/keymaps/input-processors
 
 	scroller {
 		layers = <SCROLL_LAYER>;
-		input-processors = <&zip_xy_scaler 1 8>, <&zip_xy_to_scroll_mapper>;
+		input-processors = <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
 	};
 };
