@@ -2,23 +2,40 @@
 include:
   # ==============================
   # R側 (Central)
+  # Bluetooth の表示名は R側 で決まるため、本体色ごとにビルドを分けています。
+  #   sosho_black -> "SOSHO Black" / sosho_white -> "SOSHO White"
+  #   (boards/shields/sosho_color/ を参照)
   # ==============================
-  # トラックパッド版
+  # 黒 / トラックボール版
   - board: xiao_ble/nrf52840/zmk
-    shield: sosho_R_trackpad rgbled_adapter
+    shield: sosho_R_trackball rgbled_adapter sosho_black
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: sosho_R_trackpad
+    artifact-name: sosho_R_trackball_black
 
-  # トラックボール版
+  # 黒 / トラックパッド版 (ブランクモジュールもこちら)
   - board: xiao_ble/nrf52840/zmk
-    shield: sosho_R_trackball rgbled_adapter
+    shield: sosho_R_trackpad rgbled_adapter sosho_black
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: sosho_R_trackball
+    artifact-name: sosho_R_trackpad_black
+
+  # 白 / トラックボール版
+  - board: xiao_ble/nrf52840/zmk
+    shield: sosho_R_trackball rgbled_adapter sosho_white
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: sosho_R_trackball_white
+
+  # 白 / トラックパッド版 (ブランクモジュールもこちら)
+  - board: xiao_ble/nrf52840/zmk
+    shield: sosho_R_trackpad rgbled_adapter sosho_white
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: sosho_R_trackpad_white
 
   # ==============================
-  # L側 (Peripheral)
+  # L側 (Peripheral)  ※表示名に関係しないため色の区別なし
   # ==============================
   # トラックパッド版
   - board: xiao_ble/nrf52840/zmk

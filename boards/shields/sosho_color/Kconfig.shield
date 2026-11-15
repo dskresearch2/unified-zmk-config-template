@@ -1,0 +1,7 @@
+# 本体色ごとの Bluetooth 表示名を切り替えるための追加シールド
+# build.yaml で R側のシールドに sosho_black / sosho_white を追加して使います。
+config SHIELD_SOSHO_BLACK
+    def_bool $(shields_list_contains,sosho_black)
+
+config SHIELD_SOSHO_WHITE
+    def_bool $(shields_list_contains,sosho_white)
