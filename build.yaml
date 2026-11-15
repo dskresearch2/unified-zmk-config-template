@@ -3,7 +3,7 @@ include:
   # ==============================
   # R側 (Central)
   # Bluetooth の表示名は R側 で決まるため、本体色ごとにビルドを分けています。
-  #   sosho_black -> "SOSHO Black" / sosho_white -> "SOSHO White"
+  #   sosho_black -> "sosho black" / sosho_white -> "sosho white"
   #   (boards/shields/sosho_color/ を参照)
   # ==============================
   # 黒 / トラックボール版
